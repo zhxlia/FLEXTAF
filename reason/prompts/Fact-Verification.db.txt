@@ -1,0 +1,65 @@
+Verify the consistency between the database and the utterance with "True" or "False" using SQL.
+Here are some demonstrations you may refer to:
+
+---
+
+CREATE TABLE information (
+tournament text ,
+wins int ,
+top_5 int ,
+top_10 int ,
+top_25 int ,
+events int ,
+cuts_made int
+);
+/*
+Columns and examples in each column :
+tournament: masters tournament, us open, the open championship, pga championship, totals ;
+wins: 0, 0, 1, 0, 1 ;
+top_5: 1, 2, 2, 0, 5 ;
+top_10: 2, 3, 2, 1, 8 ;
+top_25: 4, 4, 2, 2, 12 ;
+events: 4, 6, 3, 5, 18 ;
+cuts_made: 4, 5, 3, 4, 16 ;
+*/
+
+utterance: 
+tony lema be in the top 5 for the master tournament , the us open , and the open championship
+
+SQL:
+SELECT CASE WHEN (SELECT COUNT(*) FROM information WHERE tournament IN ('masters tournament', 'us open', 'the open championship') AND top_5 > 0) = 3 THEN 'True' ELSE 'False' END AS result;
+
+---
+
+CREATE TABLE information (
+year int ,
+competition text ,
+venue text ,
+position text ,
+event text
+);
+/*
+Columns and examples in each column :
+year: 2006, 2006, 2006, 2006, 2006, 2007, 2007, 2007, 2009, 2013 ;
+competition: world cross country championships, world cross country championships, african championships in athletics, world road running championships, world road running championships, world cross country championships, all - africa games, world championships in athletics, world cross country championships, world championships ;
+venue: fukuoka , japan, fukuoka , japan, bambous , mauritius, debrecen , hungary, debrecen , hungary, mombasa , kenya, algiers , algeria, osaka , japan, amman , jordan, moscow , russia ;
+position: 10th, 3rd, 5th, 7th, 3rd, 7th, 2nd, 13th, 17th, 3rd ;
+event: individual junior race, team junior race, 10000 m, individual 20 km, team 20 km, individual, 10000 m, 10000 m, individual, marathon ;
+*/
+
+utterance: 
+japan and hungary host the competition 3 time each
+
+SQL:
+SELECT CASE WHEN (SELECT COUNT(*) FROM information WHERE venue LIKE '%japan%') = 3 AND (SELECT COUNT(*) FROM information WHERE venue LIKE '%hungary%') = 3 THEN 'True' ELSE 'False' END AS result;
+
+---
+
+Based on the above demonstrations，Verify the consistency between the following table and utterance.
+
+<table>
+
+utterance: 
+<utterance>
+
+SQL:

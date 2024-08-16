@@ -1,0 +1,156 @@
+Verify the consistency between the table and the utterance with "True" or "False" using python code.
+You should generate a function with the following signature without any other parameters: 
+Here are some demonstrations you may refer to:
+
+---
+
+table = [
+    {
+        "tournament": "masters tournament",
+        "wins": "0",
+        "top - 5": "1",
+        "top - 10": "2",
+        "top - 25": "4",
+        "events": "4",
+        "cuts made": "4"
+    },
+    {
+        "tournament": "us open",
+        "wins": "0",
+        "top - 5": "2",
+        "top - 10": "3",
+        "top - 25": "4",
+        "events": "6",
+        "cuts made": "5"
+    },
+    {
+        "tournament": "the open championship",
+        "wins": "1",
+        "top - 5": "2",
+        "top - 10": "2",
+        "top - 25": "2",
+        "events": "3",
+        "cuts made": "3"
+    },
+    {
+        "tournament": "pga championship",
+        "wins": "0",
+        "top - 5": "0",
+        "top - 10": "1",
+        "top - 25": "2",
+        "events": "5",
+        "cuts made": "4"
+    },
+    {
+        "tournament": "totals",
+        "wins": "1",
+        "top - 5": "5",
+        "top - 10": "8",
+        "top - 25": "12",
+        "events": "18",
+        "cuts made": "16"
+    }
+]
+utterance: tony lema be in the top 5 for the master tournament , the us open , and the open championship
+def solver(table):
+    top_5_tournament = [row["tournament"] for row in table if int(row["top - 5"]) > 0]
+    if "masters tournament" not in top_5_tournament:
+        return False
+    if "us open" not in top_5_tournament:
+        return False
+    if "the open championship" not in top_5_tournament:
+        return False
+    return True
+
+---
+
+table = [
+    {
+        "year": "2006",
+        "competition": "world cross country championships",
+        "venue": "fukuoka , japan",
+        "position": "10th",
+        "event": "individual junior race"
+    },
+    {
+        "year": "2006",
+        "competition": "world cross country championships",
+        "venue": "fukuoka , japan",
+        "position": "3rd",
+        "event": "team junior race"
+    },
+    {
+        "year": "2006",
+        "competition": "african championships in athletics",
+        "venue": "bambous , mauritius",
+        "position": "5th",
+        "event": "10000 m"
+    },
+    {
+        "year": "2006",
+        "competition": "world road running championships",
+        "venue": "debrecen , hungary",
+        "position": "7th",
+        "event": "individual 20 km"
+    },
+    {
+        "year": "2006",
+        "competition": "world road running championships",
+        "venue": "debrecen , hungary",
+        "position": "3rd",
+        "event": "team 20 km"
+    },
+    {
+        "year": "2007",
+        "competition": "world cross country championships",
+        "venue": "mombasa , kenya",
+        "position": "7th",
+        "event": "individual"
+    },
+    {
+        "year": "2007",
+        "competition": "all - africa games",
+        "venue": "algiers , algeria",
+        "position": "2nd",
+        "event": "10000 m"
+    },
+    {
+        "year": "2007",
+        "competition": "world championships in athletics",
+        "venue": "osaka , japan",
+        "position": "13th",
+        "event": "10000 m"
+    },
+    {
+        "year": "2009",
+        "competition": "world cross country championships",
+        "venue": "amman , jordan",
+        "position": "17th",
+        "event": "individual"
+    },
+    {
+        "year": "2013",
+        "competition": "world championships",
+        "venue": "moscow , russia",
+        "position": "3rd",
+        "event": "marathon"
+    }
+]
+utterance: japan and hungary host the competition 3 time each
+def solver(table):
+    japan_host_time = 0
+    hungary_host_time = 0
+    for row in table:
+        if "japan" in row["venue"]:
+            japan_host_time += 1
+        elif "hungary" in row["venue"]:
+            hungary_host_time += 1
+    return (japan_host_time == 3 and hungary_host_time == 3)
+
+---
+
+Based on the above demonstrations，Verify the consistency between the following table and utterance.
+table = <table>
+utterance: <utterance>
+def solver(table):
+    # Your code here   

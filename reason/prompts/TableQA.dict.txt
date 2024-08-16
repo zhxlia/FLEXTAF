@@ -1,0 +1,643 @@
+Answer the question with the given table using python code.
+You should generate a function with the following signature without any other parameters:
+Here are some examples you may refer to:
+
+---
+
+[
+    {
+        "Aircraft": "Robinson R-22",
+        "Description": "Light utility helicopter",
+        "Max Gross Weight": "1,370 lb (635 kg)",
+        "Total disk area": "497 ft² (46.2 m²)",
+        "Max disk Loading": "2.6 lb/ft² (14 kg/m²)"
+    },
+    {
+        "Aircraft": "Bell 206B3 JetRanger",
+        "Description": "Turboshaft utility helicopter",
+        "Max Gross Weight": "3,200 lb (1,451 kg)",
+        "Total disk area": "872 ft² (81.1 m²)",
+        "Max disk Loading": "3.7 lb/ft² (18 kg/m²)"
+    },
+    {
+        "Aircraft": "CH-47D Chinook",
+        "Description": "Tandem rotor helicopter",
+        "Max Gross Weight": "50,000 lb (22,680 kg)",
+        "Total disk area": "5,655 ft² (526 m²)",
+        "Max disk Loading": "8.8 lb/ft² (43 kg/m²)"
+    },
+    {
+        "Aircraft": "Mil Mi-26",
+        "Description": "Heavy-lift helicopter",
+        "Max Gross Weight": "123,500 lb (56,000 kg)",
+        "Total disk area": "8,495 ft² (789 m²)",
+        "Max disk Loading": "14.5 lb/ft² (71 kg/m²)"
+    },
+    {
+        "Aircraft": "CH-53E Super Stallion",
+        "Description": "Heavy-lift helicopter",
+        "Max Gross Weight": "73,500 lb (33,300 kg)",
+        "Total disk area": "4,900 ft² (460 m²)",
+        "Max disk Loading": "15 lb/ft² (72 kg/m²)"
+    }
+]
+utterance: What is the max gross weight of the Robinson R-22?
+def solver(table):
+    for row in table:
+        if row["Aircraft"] == "Robinson R-22":
+            return row["Max Gross Weight"]
+
+---
+
+table = [
+    {
+        "Player": "Mark Baker",
+        "No.": "3",
+        "Nationality": "United States",
+        "Position": "Guard",
+        "Years in Toronto": "1998-99",
+        "School/Club Team": "Ohio State"
+    },
+    {
+        "Player": "Marcus Banks",
+        "No.": "3",
+        "Nationality": "United States",
+        "Position": "Guard",
+        "Years in Toronto": "2009-10",
+        "School/Club Team": "UNLV"
+    },
+    {
+        "Player": "Leandro Barbosa",
+        "No.": "20",
+        "Nationality": "Brazil",
+        "Position": "Guard",
+        "Years in Toronto": "2010-2012",
+        "School/Club Team": "Tilibra/Copimax ( Brazil )"
+    },
+    {
+        "Player": "Andrea Bargnani",
+        "No.": "7",
+        "Nationality": "Italy",
+        "Position": "Forward-Center",
+        "Years in Toronto": "2006-2013",
+        "School/Club Team": "Benetton Treviso ( Italy )"
+    },
+    {
+        "Player": "Andre Barrett",
+        "No.": "12",
+        "Nationality": "United States",
+        "Position": "Point guard",
+        "Years in Toronto": "2006",
+        "School/Club Team": "Seton Hall"
+    },
+    {
+        "Player": "Maceo Baston",
+        "No.": "9, 14",
+        "Nationality": "United States",
+        "Position": "Forward",
+        "Years in Toronto": "2003, 2007-08",
+        "School/Club Team": "Michigan"
+    },
+    {
+        "Player": "Mengke Bateer",
+        "No.": "14, 42",
+        "Nationality": "China",
+        "Position": "Center",
+        "Years in Toronto": "2003-04",
+        "School/Club Team": "Beijing Ducks ( China )"
+    },
+    {
+        "Player": "Lonny Baxter",
+        "No.": "35",
+        "Nationality": "United States",
+        "Position": "Forward",
+        "Years in Toronto": "2003-04",
+        "School/Club Team": "Maryland"
+    },
+    {
+        "Player": "Jerryd Bayless",
+        "No.": "5",
+        "Nationality": "United States",
+        "Position": "Guard",
+        "Years in Toronto": "2010-2012",
+        "School/Club Team": "Arizona"
+    },
+    {
+        "Player": "Marco Belinelli",
+        "No.": "0",
+        "Nationality": "Italy",
+        "Position": "Guard",
+        "Years in Toronto": "2009-2010",
+        "School/Club Team": "Fortitudo Bologna ( Italy )"
+    },
+    {
+        "Player": "Benoit Benjamin",
+        "No.": "7",
+        "Nationality": "United States",
+        "Position": "Center",
+        "Years in Toronto": "1996",
+        "School/Club Team": "Creighton"
+    },
+    {
+        "Player": "Chauncey Billups",
+        "No.": "3",
+        "Nationality": "United States",
+        "Position": "Guard",
+        "Years in Toronto": "1998",
+        "School/Club Team": "Colorado"
+    },
+    {
+        "Player": "Corie Blount",
+        "No.": "44",
+        "Nationality": "United States",
+        "Position": "Forward-Center",
+        "Years in Toronto": "2004",
+        "School/Club Team": "Cincinnati"
+    },
+    {
+        "Player": "Muggsy Bogues",
+        "No.": "14",
+        "Nationality": "United States",
+        "Position": "Guard",
+        "Years in Toronto": "1999-2001",
+        "School/Club Team": "Wake Forest"
+    },
+    {
+        "Player": "Matt Bonner",
+        "No.": "16",
+        "Nationality": "United States",
+        "Position": "Forward",
+        "Years in Toronto": "2004-06",
+        "School/Club Team": "Florida"
+    },
+    {
+        "Player": "Chris Bosh",
+        "No.": "4",
+        "Nationality": "United States",
+        "Position": "Forward-Center",
+        "Years in Toronto": "2003-10",
+        "School/Club Team": "Georgia Tech"
+    },
+    {
+        "Player": "Michael Bradley",
+        "No.": "5, 33",
+        "Nationality": "United States",
+        "Position": "Forward-Center",
+        "Years in Toronto": "2001-04",
+        "School/Club Team": "Villanova"
+    },
+    {
+        "Player": "Primož Brezec",
+        "No.": "1",
+        "Nationality": "Slovenia",
+        "Position": "Center",
+        "Years in Toronto": "2008",
+        "School/Club Team": "KK Union Olimpija ( Slovenia )"
+    },
+    {
+        "Player": "Damone Brown",
+        "No.": "54",
+        "Nationality": "United States",
+        "Position": "Forward",
+        "Years in Toronto": "2002-03",
+        "School/Club Team": "Syracuse"
+    },
+    {
+        "Player": "Dee Brown",
+        "No.": "7",
+        "Nationality": "United States",
+        "Position": "Guard",
+        "Years in Toronto": "1998-2000",
+        "School/Club Team": "Jacksonville"
+    },
+    {
+        "Player": "Rick Brunson",
+        "No.": "9",
+        "Nationality": "United States",
+        "Position": "Guard",
+        "Years in Toronto": "2003",
+        "School/Club Team": "Temple"
+    },
+    {
+        "Player": "Rasual Butler",
+        "No.": "9",
+        "Nationality": "United States",
+        "Position": "Guard-Forward",
+        "Years in Toronto": "2011-12",
+        "School/Club Team": "La Salle"
+    }
+]
+utterance: How many players were with the school or club team La Salle?
+def solver(table):
+    players_la_salle = set()
+    for row in table:
+        if row["School/Club Team"] == "La Salle":
+            players_la_salle.add(row["Player"])
+    return len(players_la_salle)
+
+---
+
+table = [
+    {
+        "Model": "Škoda Felicia",
+        "1991": "172,000",
+        "1995": "210,000",
+        "1996": "-",
+        "1997": "288,458",
+        "1998": "261,127",
+        "1999": "241,256",
+        "2000": "148,028",
+        "2001": "44,963",
+        "2002": "−",
+        "2003": "−",
+        "2004": "−",
+        "2005": "−",
+        "2006": "−",
+        "2007": "−",
+        "2008": "−",
+        "2009": "−",
+        "2010": "−",
+        "2011": "−",
+        "2012": "−",
+        "2013": "−"
+    },
+    {
+        "Model": "Škoda Octavia",
+        "1991": "−",
+        "1995": "−",
+        "1996": "-",
+        "1997": "47,876",
+        "1998": "102,373",
+        "1999": "143,251",
+        "2000": "158,503",
+        "2001": "164,134",
+        "2002": "164,017",
+        "2003": "165,635",
+        "2004": "181,683",
+        "2005": "233,322",
+        "2006": "270,274",
+        "2007": "309,951",
+        "2008": "344,857",
+        "2009": "317,335",
+        "2010": "349,746",
+        "2011": "387,200",
+        "2012": "409,360",
+        "2013": "359,600"
+    },
+    {
+        "Model": "Škoda Fabia",
+        "1991": "−",
+        "1995": "−",
+        "1996": "−",
+        "1997": "−",
+        "1998": "−",
+        "1999": "823",
+        "2000": "128,872",
+        "2001": "250,978",
+        "2002": "264,641",
+        "2003": "260,988",
+        "2004": "247,600",
+        "2005": "236,698",
+        "2006": "243,982",
+        "2007": "232,890",
+        "2008": "246,561",
+        "2009": "264,173",
+        "2010": "229,045",
+        "2011": "266,800",
+        "2012": "255,025",
+        "2013": "202,000"
+    },
+    {
+        "Model": "Škoda Superb",
+        "1991": "−",
+        "1995": "−",
+        "1996": "−",
+        "1997": "−",
+        "1998": "−",
+        "1999": "−",
+        "2000": "−",
+        "2001": "177",
+        "2002": "16,867",
+        "2003": "23,135",
+        "2004": "22,392",
+        "2005": "22,091",
+        "2006": "20,989",
+        "2007": "20,530",
+        "2008": "25,645",
+        "2009": "44,548",
+        "2010": "98,873",
+        "2011": "116,700",
+        "2012": "106,847",
+        "2013": "94,400"
+    },
+    {
+        "Model": "Škoda Roomster",
+        "1991": "−",
+        "1995": "−",
+        "1996": "−",
+        "1997": "−",
+        "1998": "−",
+        "1999": "−",
+        "2000": "−",
+        "2001": "−",
+        "2002": "−",
+        "2003": "−",
+        "2004": "−",
+        "2005": "−",
+        "2006": "14,422",
+        "2007": "66,661",
+        "2008": "57,467",
+        "2009": "47,152",
+        "2010": "32,332",
+        "2011": "36,000",
+        "2012": "39,249",
+        "2013": "33,300"
+    },
+    {
+        "Model": "Škoda Yeti",
+        "1991": "−",
+        "1995": "−",
+        "1996": "−",
+        "1997": "−",
+        "1998": "−",
+        "1999": "−",
+        "2000": "−",
+        "2001": "−",
+        "2002": "−",
+        "2003": "−",
+        "2004": "−",
+        "2005": "−",
+        "2006": "−",
+        "2007": "−",
+        "2008": "−",
+        "2009": "11,018",
+        "2010": "52,604",
+        "2011": "70,300",
+        "2012": "90,952",
+        "2013": "82,400"
+    },
+    {
+        "Model": "Škoda Rapid",
+        "1991": "−",
+        "1995": "−",
+        "1996": "−",
+        "1997": "−",
+        "1998": "−",
+        "1999": "−",
+        "2000": "−",
+        "2001": "−",
+        "2002": "−",
+        "2003": "−",
+        "2004": "−",
+        "2005": "−",
+        "2006": "−",
+        "2007": "−",
+        "2008": "−",
+        "2009": "−",
+        "2010": "−",
+        "2011": "1,700",
+        "2012": "9,292",
+        "2013": "103,800"
+    },
+    {
+        "Model": "Škoda Citigo",
+        "1991": "−",
+        "1995": "−",
+        "1996": "−",
+        "1997": "−",
+        "1998": "−",
+        "1999": "−",
+        "2000": "−",
+        "2001": "−",
+        "2002": "−",
+        "2003": "−",
+        "2004": "−",
+        "2005": "−",
+        "2006": "−",
+        "2007": "−",
+        "2008": "−",
+        "2009": "−",
+        "2010": "−",
+        "2011": "509",
+        "2012": "36,687",
+        "2013": "45,200"
+    },
+    {
+        "Model": "Total",
+        "1991": "172,000",
+        "1995": "210,000",
+        "1996": "261,000",
+        "1997": "336,334",
+        "1998": "363,500",
+        "1999": "385,330",
+        "2000": "435,403",
+        "2001": "460,252",
+        "2002": "445,525",
+        "2003": "449,758",
+        "2004": "451,675",
+        "2005": "492,111",
+        "2006": "549,667",
+        "2007": "630,032",
+        "2008": "674,530",
+        "2009": "684,226",
+        "2010": "762,600",
+        "2011": "879,200",
+        "2012": "949,412",
+        "2013": "920,800"
+    }
+]
+utterance: is the number on skoda fabia for 1999 more or less than 1000?
+def solver(table):
+    for row in table:
+        if row["Model"] == "Škoda Fabia":
+            num_1999 = row["1999"].replace(",", "")
+            if int(num_1999) > 1000:
+                return "more"
+            else:
+                return "less"
+    return "less"
+
+---
+
+table = [
+    {
+        "Place": "1",
+        "Rider": "Sylvain Geboers",
+        "Country": "Belgium",
+        "Team": "Suzuki",
+        "Points": "3066",
+        "Wins": "3"
+    },
+    {
+        "Place": "2",
+        "Rider": "Adolf Weil",
+        "Country": "Germany",
+        "Team": "Maico",
+        "Points": "2331",
+        "Wins": "2"
+    },
+    {
+        "Place": "3",
+        "Rider": "Torlief Hansen",
+        "Country": "Sweden",
+        "Team": "Husqvarna",
+        "Points": "2052",
+        "Wins": "0"
+    },
+    {
+        "Place": "4",
+        "Rider": "Roger De Coster",
+        "Country": "Belgium",
+        "Team": "Suzuki",
+        "Points": "1865",
+        "Wins": "3"
+    },
+    {
+        "Place": "5",
+        "Rider": "Joel Robert",
+        "Country": "Belgium",
+        "Team": "Suzuki",
+        "Points": "1730",
+        "Wins": "1"
+    },
+    {
+        "Place": "6",
+        "Rider": "Heikki Mikkola",
+        "Country": "Finland",
+        "Team": "Husqvarna",
+        "Points": "1680",
+        "Wins": "2"
+    },
+    {
+        "Place": "7",
+        "Rider": "Willy Bauer",
+        "Country": "Germany",
+        "Team": "Maico",
+        "Points": "1276",
+        "Wins": "0"
+    },
+    {
+        "Place": "8",
+        "Rider": "Gaston Rahier",
+        "Country": "Belgium",
+        "Team": "ČZ",
+        "Points": "1112",
+        "Wins": "0"
+    },
+    {
+        "Place": "9",
+        "Rider": "Pierre Karsmakers",
+        "Country": "Netherlands",
+        "Team": "Husqvarna",
+        "Points": "1110",
+        "Wins": "0"
+    },
+    {
+        "Place": "10",
+        "Rider": "Dave Bickers",
+        "Country": "United Kingdom",
+        "Team": "ČZ",
+        "Points": "1076",
+        "Wins": "0"
+    },
+    {
+        "Place": "11",
+        "Rider": "John Banks",
+        "Country": "United Kingdom",
+        "Team": "ČZ",
+        "Points": "971",
+        "Wins": "0"
+    },
+    {
+        "Place": "12",
+        "Rider": "Andy Roberton",
+        "Country": "United Kingdom",
+        "Team": "Husqvarna",
+        "Points": "810",
+        "Wins": "0"
+    },
+    {
+        "Place": "13",
+        "Rider": "Vlastimil Valek",
+        "Country": "Czechoslovakia",
+        "Team": "ČZ",
+        "Points": "709",
+        "Wins": "0"
+    },
+    {
+        "Place": "14",
+        "Rider": "Mark Blackwell",
+        "Country": "United States",
+        "Team": "Husqvarna",
+        "Points": "604",
+        "Wins": "0"
+    },
+    {
+        "Place": "15",
+        "Rider": "Brad Lackey",
+        "Country": "United States",
+        "Team": "ČZ",
+        "Points": "603",
+        "Wins": "0"
+    },
+    {
+        "Place": "16",
+        "Rider": "Gary Jones",
+        "Country": "United States",
+        "Team": "Yamaha",
+        "Points": "439",
+        "Wins": "0"
+    },
+    {
+        "Place": "17",
+        "Rider": "John DeSoto",
+        "Country": "United States",
+        "Team": "Suzuki",
+        "Points": "425",
+        "Wins": "0"
+    },
+    {
+        "Place": "18",
+        "Rider": "Chris Horsefield",
+        "Country": "United Kingdom",
+        "Team": "ČZ",
+        "Points": "416",
+        "Wins": "0"
+    },
+    {
+        "Place": "19",
+        "Rider": "Uno Palm",
+        "Country": "Sweden",
+        "Team": "Husqvarna",
+        "Points": "324",
+        "Wins": "0"
+    },
+    {
+        "Place": "20",
+        "Rider": "Peter Lamppu",
+        "Country": "United States",
+        "Team": "Montesa",
+        "Points": "309",
+        "Wins": "0"
+    }
+]
+utterance: which country had the most riders that placed in the top 20 of the 1971 trans-ama final standings?
+def solver(table):
+    country_counts = {}
+    for row in table:
+        country = row["Country"]
+        if country in country_counts:
+            country_counts[country] += 1
+        else:
+            country_counts[country] = 1
+    max_riders = max(country_counts.values())
+    countries_with_max_riders = [country for country, count in country_counts.items() if count == max_riders]
+    return countries_with_max_riders[0]
+
+---
+
+Based on the above demonstrations，answer the following utterance with the following table using python code.
+table = <table>
+utterance: <utterance>
+def solver(table):
+    # Your code here  

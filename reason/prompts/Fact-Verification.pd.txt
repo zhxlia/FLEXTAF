@@ -1,0 +1,167 @@
+Verify the consistency between the table and the utterance with "True" or "False" using python code.
+You should generate a function with the following signature without any other parameters: 
+Here are some demonstrations you may refer to, and you don't need to answer the demonstrations:
+
+---
+
+table = pd.DataFrame([
+    [
+        "masters tournament",
+        "0",
+        "1",
+        "2",
+        "4",
+        "4",
+        "4"
+    ],
+    [
+        "us open",
+        "0",
+        "2",
+        "3",
+        "4",
+        "6",
+        "5"
+    ],
+    [
+        "the open championship",
+        "1",
+        "2",
+        "2",
+        "2",
+        "3",
+        "3"
+    ],
+    [
+        "pga championship",
+        "0",
+        "0",
+        "1",
+        "2",
+        "5",
+        "4"
+    ],
+    [
+        "totals",
+        "1",
+        "5",
+        "8",
+        "12",
+        "18",
+        "16"
+    ]
+], columns = [
+    "tournament",
+    "wins",
+    "top - 5",
+    "top - 10",
+    "top - 25",
+    "events",
+    "cuts made"
+]
+)
+utterance: tony lema be in the top 5 for the master tournament , the us open , and the open championship
+def solver(table):
+    tournaments = ["masters tournament", "us open", "the open championship"]
+    for tournament in tournaments:
+        row = table[table['tournament'] == tournament]
+        if row.empty or int(row['top - 5'].values[0]) == 0:
+            return False 
+    return True
+
+---
+
+table = pd.DataFrame([
+    [
+        "2006",
+        "world cross country championships",
+        "fukuoka , japan",
+        "10th",
+        "individual junior race"
+    ],
+    [
+        "2006",
+        "world cross country championships",
+        "fukuoka , japan",
+        "3rd",
+        "team junior race"
+    ],
+    [
+        "2006",
+        "african championships in athletics",
+        "bambous , mauritius",
+        "5th",
+        "10000 m"
+    ],
+    [
+        "2006",
+        "world road running championships",
+        "debrecen , hungary",
+        "7th",
+        "individual 20 km"
+    ],
+    [
+        "2006",
+        "world road running championships",
+        "debrecen , hungary",
+        "3rd",
+        "team 20 km"
+    ],
+    [
+        "2007",
+        "world cross country championships",
+        "mombasa , kenya",
+        "7th",
+        "individual"
+    ],
+    [
+        "2007",
+        "all - africa games",
+        "algiers , algeria",
+        "2nd",
+        "10000 m"
+    ],
+    [
+        "2007",
+        "world championships in athletics",
+        "osaka , japan",
+        "13th",
+        "10000 m"
+    ],
+    [
+        "2009",
+        "world cross country championships",
+        "amman , jordan",
+        "17th",
+        "individual"
+    ],
+    [
+        "2013",
+        "world championships",
+        "moscow , russia",
+        "3rd",
+        "marathon"
+    ]
+], columns = [
+    "year",
+    "competition",
+    "venue",
+    "position",
+    "event"
+]
+)
+utterance: japan and hungary host the competition 3 time each
+def solver(table):
+    table['venue'] = table['venue'].str.strip()
+    japan_count = table['venue'].str.contains('japan', case=False).sum()
+    hungary_count = table['venue'].str.contains('hungary', case=False).sum()
+    return japan_count == 3 and hungary_count == 3
+
+---
+
+Based on the above demonstrations，Verify the consistency between the following table and utterance.
+
+table = <table>
+utterance: <utterance>
+def solver(table):
+    # Your code here   

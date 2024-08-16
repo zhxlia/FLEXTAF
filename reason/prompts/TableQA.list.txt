@@ -1,0 +1,687 @@
+Answer the question with the given table using python code.
+You should generate a function with the following signature without any other parameters:
+Here are some examples you may refer to:
+
+---
+
+table = [
+    [
+        "Aircraft",
+        "Description",
+        "Max Gross Weight",
+        "Total disk area",
+        "Max disk Loading"
+    ],
+    [
+        "Robinson R-22",
+        "Light utility helicopter",
+        "1,370 lb (635 kg)",
+        "497 ft² (46.2 m²)",
+        "2.6 lb/ft² (14 kg/m²)"
+    ],
+    [
+        "Bell 206B3 JetRanger",
+        "Turboshaft utility helicopter",
+        "3,200 lb (1,451 kg)",
+        "872 ft² (81.1 m²)",
+        "3.7 lb/ft² (18 kg/m²)"
+    ],
+    [
+        "CH-47D Chinook",
+        "Tandem rotor helicopter",
+        "50,000 lb (22,680 kg)",
+        "5,655 ft² (526 m²)",
+        "8.8 lb/ft² (43 kg/m²)"
+    ],
+    [
+        "Mil Mi-26",
+        "Heavy-lift helicopter",
+        "123,500 lb (56,000 kg)",
+        "8,495 ft² (789 m²)",
+        "14.5 lb/ft² (71 kg/m²)"
+    ],
+    [
+        "CH-53E Super Stallion",
+        "Heavy-lift helicopter",
+        "73,500 lb (33,300 kg)",
+        "4,900 ft² (460 m²)",
+        "15 lb/ft² (72 kg/m²)"
+    ]
+]
+utterance: What is the max gross weight of the Robinson R-22?
+def solver(table):
+    for row in table[1:]:
+        if row[0] == "Robinson R-22":
+            return row[2]
+
+---
+
+table = [
+    [
+        "Player",
+        "No.",
+        "Nationality",
+        "Position",
+        "Years in Toronto",
+        "School/Club Team"
+    ],
+    [
+        "Mark Baker",
+        "3",
+        "United States",
+        "Guard",
+        "1998-99",
+        "Ohio State"
+    ],
+    [
+        "Marcus Banks",
+        "3",
+        "United States",
+        "Guard",
+        "2009-10",
+        "UNLV"
+    ],
+    [
+        "Leandro Barbosa",
+        "20",
+        "Brazil",
+        "Guard",
+        "2010-2012",
+        "Tilibra/Copimax ( Brazil )"
+    ],
+    [
+        "Andrea Bargnani",
+        "7",
+        "Italy",
+        "Forward-Center",
+        "2006-2013",
+        "Benetton Treviso ( Italy )"
+    ],
+    [
+        "Andre Barrett",
+        "12",
+        "United States",
+        "Point guard",
+        "2006",
+        "Seton Hall"
+    ],
+    [
+        "Maceo Baston",
+        "9, 14",
+        "United States",
+        "Forward",
+        "2003, 2007-08",
+        "Michigan"
+    ],
+    [
+        "Mengke Bateer",
+        "14, 42",
+        "China",
+        "Center",
+        "2003-04",
+        "Beijing Ducks ( China )"
+    ],
+    [
+        "Lonny Baxter",
+        "35",
+        "United States",
+        "Forward",
+        "2003-04",
+        "Maryland"
+    ],
+    [
+        "Jerryd Bayless",
+        "5",
+        "United States",
+        "Guard",
+        "2010-2012",
+        "Arizona"
+    ],
+    [
+        "Marco Belinelli",
+        "0",
+        "Italy",
+        "Guard",
+        "2009-2010",
+        "Fortitudo Bologna ( Italy )"
+    ],
+    [
+        "Benoit Benjamin",
+        "7",
+        "United States",
+        "Center",
+        "1996",
+        "Creighton"
+    ],
+    [
+        "Chauncey Billups",
+        "3",
+        "United States",
+        "Guard",
+        "1998",
+        "Colorado"
+    ],
+    [
+        "Corie Blount",
+        "44",
+        "United States",
+        "Forward-Center",
+        "2004",
+        "Cincinnati"
+    ],
+    [
+        "Muggsy Bogues",
+        "14",
+        "United States",
+        "Guard",
+        "1999-2001",
+        "Wake Forest"
+    ],
+    [
+        "Matt Bonner",
+        "16",
+        "United States",
+        "Forward",
+        "2004-06",
+        "Florida"
+    ],
+    [
+        "Chris Bosh",
+        "4",
+        "United States",
+        "Forward-Center",
+        "2003-10",
+        "Georgia Tech"
+    ],
+    [
+        "Michael Bradley",
+        "5, 33",
+        "United States",
+        "Forward-Center",
+        "2001-04",
+        "Villanova"
+    ],
+    [
+        "Primož Brezec",
+        "1",
+        "Slovenia",
+        "Center",
+        "2008",
+        "KK Union Olimpija ( Slovenia )"
+    ],
+    [
+        "Damone Brown",
+        "54",
+        "United States",
+        "Forward",
+        "2002-03",
+        "Syracuse"
+    ],
+    [
+        "Dee Brown",
+        "7",
+        "United States",
+        "Guard",
+        "1998-2000",
+        "Jacksonville"
+    ],
+    [
+        "Rick Brunson",
+        "9",
+        "United States",
+        "Guard",
+        "2003",
+        "Temple"
+    ],
+    [
+        "Rasual Butler",
+        "9",
+        "United States",
+        "Guard-Forward",
+        "2011-12",
+        "La Salle"
+    ]
+]
+utterance: How many players were with the school or club team La Salle?
+def solver(table):
+    players_la_salle = set()
+    for row in table[1:]:
+        if row[5] == "La Salle":
+            players_la_salle.add(row[0])
+    return len(players_la_salle)
+
+---
+
+table = [
+    [
+        "Model",
+        "1991",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013"
+    ],
+    [
+        "Škoda Felicia",
+        "172,000",
+        "210,000",
+        "-",
+        "288,458",
+        "261,127",
+        "241,256",
+        "148,028",
+        "44,963",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−"
+    ],
+    [
+        "Škoda Octavia",
+        "−",
+        "−",
+        "-",
+        "47,876",
+        "102,373",
+        "143,251",
+        "158,503",
+        "164,134",
+        "164,017",
+        "165,635",
+        "181,683",
+        "233,322",
+        "270,274",
+        "309,951",
+        "344,857",
+        "317,335",
+        "349,746",
+        "387,200",
+        "409,360",
+        "359,600"
+    ],
+    [
+        "Škoda Fabia",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "823",
+        "128,872",
+        "250,978",
+        "264,641",
+        "260,988",
+        "247,600",
+        "236,698",
+        "243,982",
+        "232,890",
+        "246,561",
+        "264,173",
+        "229,045",
+        "266,800",
+        "255,025",
+        "202,000"
+    ],
+    [
+        "Škoda Superb",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "177",
+        "16,867",
+        "23,135",
+        "22,392",
+        "22,091",
+        "20,989",
+        "20,530",
+        "25,645",
+        "44,548",
+        "98,873",
+        "116,700",
+        "106,847",
+        "94,400"
+    ],
+    [
+        "Škoda Roomster",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "14,422",
+        "66,661",
+        "57,467",
+        "47,152",
+        "32,332",
+        "36,000",
+        "39,249",
+        "33,300"
+    ],
+    [
+        "Škoda Yeti",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "11,018",
+        "52,604",
+        "70,300",
+        "90,952",
+        "82,400"
+    ],
+    [
+        "Škoda Rapid",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "1,700",
+        "9,292",
+        "103,800"
+    ],
+    [
+        "Škoda Citigo",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "509",
+        "36,687",
+        "45,200"
+    ],
+    [
+        "Total",
+        "172,000",
+        "210,000",
+        "261,000",
+        "336,334",
+        "363,500",
+        "385,330",
+        "435,403",
+        "460,252",
+        "445,525",
+        "449,758",
+        "451,675",
+        "492,111",
+        "549,667",
+        "630,032",
+        "674,530",
+        "684,226",
+        "762,600",
+        "879,200",
+        "949,412",
+        "920,800"
+    ]
+]
+utterance: is the number on skoda fabia for 1999 more or less than 1000?
+def solver(table):
+    for row in table[1:]:
+        if row[0] == 'Škoda Fabia':
+            if row[6] == "−" or int(row[6].replace(",", "")) < 1000:
+                return "less"
+            else:
+                return "more"
+
+---
+
+table = [
+    [
+        "Place",
+        "Rider",
+        "Country",
+        "Team",
+        "Points",
+        "Wins"
+    ],
+    [
+        "1",
+        "Sylvain Geboers",
+        "Belgium",
+        "Suzuki",
+        "3066",
+        "3"
+    ],
+    [
+        "2",
+        "Adolf Weil",
+        "Germany",
+        "Maico",
+        "2331",
+        "2"
+    ],
+    [
+        "3",
+        "Torlief Hansen",
+        "Sweden",
+        "Husqvarna",
+        "2052",
+        "0"
+    ],
+    [
+        "4",
+        "Roger De Coster",
+        "Belgium",
+        "Suzuki",
+        "1865",
+        "3"
+    ],
+    [
+        "5",
+        "Joel Robert",
+        "Belgium",
+        "Suzuki",
+        "1730",
+        "1"
+    ],
+    [
+        "6",
+        "Heikki Mikkola",
+        "Finland",
+        "Husqvarna",
+        "1680",
+        "2"
+    ],
+    [
+        "7",
+        "Willy Bauer",
+        "Germany",
+        "Maico",
+        "1276",
+        "0"
+    ],
+    [
+        "8",
+        "Gaston Rahier",
+        "Belgium",
+        "ČZ",
+        "1112",
+        "0"
+    ],
+    [
+        "9",
+        "Pierre Karsmakers",
+        "Netherlands",
+        "Husqvarna",
+        "1110",
+        "0"
+    ],
+    [
+        "10",
+        "Dave Bickers",
+        "United Kingdom",
+        "ČZ",
+        "1076",
+        "0"
+    ],
+    [
+        "11",
+        "John Banks",
+        "United Kingdom",
+        "ČZ",
+        "971",
+        "0"
+    ],
+    [
+        "12",
+        "Andy Roberton",
+        "United Kingdom",
+        "Husqvarna",
+        "810",
+        "0"
+    ],
+    [
+        "13",
+        "Vlastimil Valek",
+        "Czechoslovakia",
+        "ČZ",
+        "709",
+        "0"
+    ],
+    [
+        "14",
+        "Mark Blackwell",
+        "United States",
+        "Husqvarna",
+        "604",
+        "0"
+    ],
+    [
+        "15",
+        "Brad Lackey",
+        "United States",
+        "ČZ",
+        "603",
+        "0"
+    ],
+    [
+        "16",
+        "Gary Jones",
+        "United States",
+        "Yamaha",
+        "439",
+        "0"
+    ],
+    [
+        "17",
+        "John DeSoto",
+        "United States",
+        "Suzuki",
+        "425",
+        "0"
+    ],
+    [
+        "18",
+        "Chris Horsefield",
+        "United Kingdom",
+        "ČZ",
+        "416",
+        "0"
+    ],
+    [
+        "19",
+        "Uno Palm",
+        "Sweden",
+        "Husqvarna",
+        "324",
+        "0"
+    ],
+    [
+        "20",
+        "Peter Lamppu",
+        "United States",
+        "Montesa",
+        "309",
+        "0"
+    ]
+]
+utterance: which country had the most riders that placed in the top 20 of the 1971 trans-ama final standings?
+def solver(table):
+    country_counts = {}
+    for row in table[1:]:
+        country = row[2]
+        if country in country_counts:
+            country_counts[country] += 1
+        else:
+            country_counts[country] = 1
+    max_riders = max(country_counts.values())
+    countries_with_max_riders = [country for country, count in country_counts.items() if count == max_riders]
+    return countries_with_max_riders[0]
+
+---
+
+Based on the above demonstrations，answer the following utterance with the following table using python code.
+table = <table>
+utterance: <utterance>
+def solver(table):
+    # Your code here
