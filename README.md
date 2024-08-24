@@ -4,14 +4,11 @@ This repository contains code for the paper ["FLEXTAF: Enhancing Table Reasoning
 
 If you use FLEXTAF in your work, please cite it as follows:
 ```
-@misc{zhang2024flextafenhancingtablereasoning,
-      title={FLEXTAF: Enhancing Table Reasoning with Flexible Tabular Formats}, 
-      author={Xuanliang Zhang and Dingzirui Wang and Longxu Dou and Baoxin Wang and Dayong Wu and Qingfu Zhu and Wanxiang Che},
-      year={2024},
-      eprint={2408.08841},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2408.08841}, 
+@article{zhang2024flextaf,
+  title={FLEXTAF: Enhancing Table Reasoning with Flexible Tabular Formats},
+  author={Zhang, Xuanliang and Wang, Dingzirui and Dou, Longxu and Wang, Baoxin and Wu, Dayong and Zhu, Qingfu and Che, Wanxiang},
+  journal={arXiv preprint arXiv:2408.08841},
+  year={2024}
 }
 ```
 
